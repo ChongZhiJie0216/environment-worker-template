@@ -9,7 +9,7 @@ GOTO admin
 )
 
 :menu
-ruby "%~dp0install_apps" %*
+winget install -e --id RubyInstallerTeam.Ruby.3.1
 ECHO Press any Key to Exit...
 PAUSE >nul
 exit

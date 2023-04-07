@@ -4,14 +4,16 @@
 require 'fileutils'
 
 SYMLINK_PATH = [
-  { src: 'Better Discord\\Plugins', dest: 'AppData\\Roaming\\betterdiscord\\plugins' },
-  { src: 'Better Discord\\Themes', dest: 'AppData\\Roaming\\betterdiscord\\themes' },
-  { src: 'Git Configs\\Main Config.gitconfig', dest: '.gitconfig' },
-  { src: 'Vim\\Default\\.vimrc', dest: '.vimrc' },
-  { src: 'Vim\\Default\\.vimrc', dest: '.ideavimrc' }
+  { src: 'Better Discord\\Plugins', dest: 'AppData\\Roaming\\BetterDiscord\\plugins' },
+  { src: 'Better Discord\\Themes', dest: 'AppData\\Roaming\\BetterDiscord\\themes' },
+  { src: 'Git_Configs\\Main.gitconfig', dest: '.gitconfig' },
+  { src: '.ideavimrc', dest: '.ideavimrc' },
+  { src: '.vimrc', dest: '.vimrc' },
+  { src: '.bashrc', dest: '.bashrc' },
+
 ].freeze
 
-puts 'Enter Dropbox folder path: '
+puts 'Enter Nextcloud/Cloud folder path: '
 print '> '
 dropbox_path = gets.chop
 
@@ -21,7 +23,7 @@ user_profile_path = gets.chop
 
 unless Dir.exist?(dropbox_path) || Dir.exist?(user_profile_path)
   puts 'Directroies entered not exists, check the validity first.'
-  puts "Dropbox dir: #{dropbox_path}"
+  puts "Nextcloud/Cloud dir: #{dropbox_path}"
   puts "User profile dir: #{user_profile_path}"
   exit
 end
